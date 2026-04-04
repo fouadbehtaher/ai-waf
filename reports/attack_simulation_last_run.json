@@ -1,0 +1,455 @@
+{
+  "run_id": "sim-20260402133635",
+  "generated_at": "2026-04-02T13:36:43+00:00",
+  "profile": "quick",
+  "total_requests": 51,
+  "families": [
+    {
+      "attack_type": "sql_injection",
+      "label": "SQL Injection",
+      "description": "Database query manipulation attempts such as UNION, OR 1=1, SLEEP, or DROP patterns.",
+      "sent": 2,
+      "allowed": 0,
+      "monitored": 0,
+      "blocked": 2,
+      "request_ids": [
+        "c05dee8dd6b7",
+        "b4b84fbcaba0"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "sql_injection",
+          "label": "SQL Injection",
+          "count": 2
+        },
+        {
+          "attack_type": "ddos",
+          "label": "DDoS / Request Flood",
+          "count": 1
+        },
+        {
+          "attack_type": "anomaly",
+          "label": "Anomaly / Zero-Day Indicator",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "attack_type": "xss",
+      "label": "Cross-Site Scripting (XSS)",
+      "description": "Script injection attempts targeting browser execution via tags, handlers, or javascript: payloads.",
+      "sent": 2,
+      "allowed": 0,
+      "monitored": 0,
+      "blocked": 2,
+      "request_ids": [
+        "d77b7cbf2743",
+        "6a8aaf96766a"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "xss",
+          "label": "Cross-Site Scripting (XSS)",
+          "count": 2
+        },
+        {
+          "attack_type": "automation_abuse",
+          "label": "Malicious Automation / Bot Activity",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "attack_type": "ddos",
+      "label": "DDoS / Request Flood",
+      "description": "Burst traffic, token bucket exhaustion, or request flooding intended to degrade availability.",
+      "sent": 18,
+      "allowed": 0,
+      "monitored": 0,
+      "blocked": 18,
+      "request_ids": [
+        "047841d4cf17",
+        "34a4a2011bbe",
+        "37dfe94a0427",
+        "ef0b8b937468",
+        "24664d474a2a",
+        "a9cd283a6b7a",
+        "0c8de418da87",
+        "9782199ce24b",
+        "4c18c3522353",
+        "0584d85cf966",
+        "6b6bd7c46bc6",
+        "3f8765d23eb1"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "automation_abuse",
+          "label": "Malicious Automation / Bot Activity",
+          "count": 18
+        },
+        {
+          "attack_type": "ddos",
+          "label": "DDoS / Request Flood",
+          "count": 16
+        },
+        {
+          "attack_type": "anomaly",
+          "label": "Anomaly / Zero-Day Indicator",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "attack_type": "path_traversal",
+      "label": "Path Traversal / LFI",
+      "description": "Directory traversal and local file access attempts such as ../ or /etc/passwd payloads.",
+      "sent": 2,
+      "allowed": 0,
+      "monitored": 0,
+      "blocked": 2,
+      "request_ids": [
+        "c1d9f4787c04",
+        "cd8424c9f0bd"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "automation_abuse",
+          "label": "Malicious Automation / Bot Activity",
+          "count": 2
+        },
+        {
+          "attack_type": "path_traversal",
+          "label": "Path Traversal / LFI",
+          "count": 1
+        },
+        {
+          "attack_type": "payload_evasion",
+          "label": "Suspicious Payload / Evasion",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "attack_type": "command_injection",
+      "label": "Command Injection / RCE",
+      "description": "Shell chaining and operating-system command execution attempts against the application stack.",
+      "sent": 2,
+      "allowed": 0,
+      "monitored": 0,
+      "blocked": 2,
+      "request_ids": [
+        "df051bc92087",
+        "acea07df583c"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "command_injection",
+          "label": "Command Injection / RCE",
+          "count": 2
+        },
+        {
+          "attack_type": "path_traversal",
+          "label": "Path Traversal / LFI",
+          "count": 1
+        },
+        {
+          "attack_type": "payload_evasion",
+          "label": "Suspicious Payload / Evasion",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "attack_type": "brute_force",
+      "label": "Brute Force / Login Abuse",
+      "description": "Repeated authentication attempts, password spraying, or credential stuffing behavior.",
+      "sent": 6,
+      "allowed": 0,
+      "monitored": 2,
+      "blocked": 4,
+      "request_ids": [
+        "0f91d8a34a96",
+        "35d01163c887",
+        "f32ea54ca1fd",
+        "3fcb7c849c3a",
+        "3c0174c0ccba",
+        "efc536fd2985"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "reconnaissance",
+          "label": "Reconnaissance / Scanning",
+          "count": 6
+        },
+        {
+          "attack_type": "automation_abuse",
+          "label": "Malicious Automation / Bot Activity",
+          "count": 6
+        },
+        {
+          "attack_type": "ddos",
+          "label": "DDoS / Request Flood",
+          "count": 5
+        },
+        {
+          "attack_type": "anomaly",
+          "label": "Anomaly / Zero-Day Indicator",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "attack_type": "reconnaissance",
+      "label": "Reconnaissance / Scanning",
+      "description": "Automated probing of many paths, admin surfaces, or technology fingerprints.",
+      "sent": 3,
+      "allowed": 0,
+      "monitored": 2,
+      "blocked": 1,
+      "request_ids": [
+        "ae5703f98e4b",
+        "3a65e8080dd3",
+        "92ab9e4dca34"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "reconnaissance",
+          "label": "Reconnaissance / Scanning",
+          "count": 3
+        },
+        {
+          "attack_type": "automation_abuse",
+          "label": "Malicious Automation / Bot Activity",
+          "count": 3
+        },
+        {
+          "attack_type": "anomaly",
+          "label": "Anomaly / Zero-Day Indicator",
+          "count": 3
+        },
+        {
+          "attack_type": "ddos",
+          "label": "DDoS / Request Flood",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "attack_type": "automation_abuse",
+      "label": "Malicious Automation / Bot Activity",
+      "description": "Suspicious scripted traffic from scanners, bots, or repeat abusive clients.",
+      "sent": 2,
+      "allowed": 0,
+      "monitored": 1,
+      "blocked": 1,
+      "request_ids": [
+        "29628cebabcf",
+        "a64484c4b8b1"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "automation_abuse",
+          "label": "Malicious Automation / Bot Activity",
+          "count": 2
+        },
+        {
+          "attack_type": "reconnaissance",
+          "label": "Reconnaissance / Scanning",
+          "count": 1
+        },
+        {
+          "attack_type": "anomaly",
+          "label": "Anomaly / Zero-Day Indicator",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "attack_type": "payload_evasion",
+      "label": "Suspicious Payload / Evasion",
+      "description": "Encoded, ambiguous, or evasive payloads likely attempting to bypass normal signature checks.",
+      "sent": 2,
+      "allowed": 0,
+      "monitored": 0,
+      "blocked": 2,
+      "request_ids": [
+        "7498a323939a",
+        "ae176caf0909"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "automation_abuse",
+          "label": "Malicious Automation / Bot Activity",
+          "count": 2
+        },
+        {
+          "attack_type": "payload_evasion",
+          "label": "Suspicious Payload / Evasion",
+          "count": 2
+        },
+        {
+          "attack_type": "anomaly",
+          "label": "Anomaly / Zero-Day Indicator",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "attack_type": "anomaly",
+      "label": "Anomaly / Zero-Day Indicator",
+      "description": "Abnormal behavior flagged by the hybrid model despite lacking a fixed rule signature.",
+      "sent": 4,
+      "allowed": 0,
+      "monitored": 4,
+      "blocked": 0,
+      "request_ids": [
+        "7f3e13758b1d",
+        "b9752042e961",
+        "e5994d4bdd76",
+        "0a0fd95bc74b"
+      ],
+      "observed_attack_types": [
+        {
+          "attack_type": "payload_evasion",
+          "label": "Suspicious Payload / Evasion",
+          "count": 4
+        },
+        {
+          "attack_type": "ddos",
+          "label": "DDoS / Request Flood",
+          "count": 1
+        },
+        {
+          "attack_type": "anomaly",
+          "label": "Anomaly / Zero-Day Indicator",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "control_traffic": {
+    "attack_type": "benign_control",
+    "label": "Benign Control Traffic",
+    "description": "Known-safe requests generated during simulation to verify that legitimate traffic still passes through the WAF.",
+    "sent": 8,
+    "allowed": 0,
+    "monitored": 4,
+    "blocked": 4,
+    "request_ids": [
+      "9cae52aca5f9",
+      "8a55eca33772",
+      "f182d24b57ad",
+      "087137612249",
+      "f29984cb34cd",
+      "be18bade1b54",
+      "c1f96a6a843e",
+      "bf8be7de818f"
+    ],
+    "observed_attack_types": [
+      {
+        "attack_type": "automation_abuse",
+        "label": "Malicious Automation / Bot Activity",
+        "count": 8
+      },
+      {
+        "attack_type": "ddos",
+        "label": "DDoS / Request Flood",
+        "count": 5
+      },
+      {
+        "attack_type": "anomaly",
+        "label": "Anomaly / Zero-Day Indicator",
+        "count": 2
+      }
+    ]
+  },
+  "observed_attack_types": [
+    {
+      "attack_type": "automation_abuse",
+      "label": "Malicious Automation / Bot Activity",
+      "description": "Suspicious scripted traffic from scanners, bots, or repeat abusive clients.",
+      "count": 43
+    },
+    {
+      "attack_type": "ddos",
+      "label": "DDoS / Request Flood",
+      "description": "Burst traffic, token bucket exhaustion, or request flooding intended to degrade availability.",
+      "count": 29
+    },
+    {
+      "attack_type": "anomaly",
+      "label": "Anomaly / Zero-Day Indicator",
+      "description": "Abnormal behavior flagged by the hybrid model despite lacking a fixed rule signature.",
+      "count": 26
+    },
+    {
+      "attack_type": "reconnaissance",
+      "label": "Reconnaissance / Scanning",
+      "description": "Automated probing of many paths, admin surfaces, or technology fingerprints.",
+      "count": 10
+    },
+    {
+      "attack_type": "payload_evasion",
+      "label": "Suspicious Payload / Evasion",
+      "description": "Encoded, ambiguous, or evasive payloads likely attempting to bypass normal signature checks.",
+      "count": 8
+    },
+    {
+      "attack_type": "sql_injection",
+      "label": "SQL Injection",
+      "description": "Database query manipulation attempts such as UNION, OR 1=1, SLEEP, or DROP patterns.",
+      "count": 2
+    },
+    {
+      "attack_type": "xss",
+      "label": "Cross-Site Scripting (XSS)",
+      "description": "Script injection attempts targeting browser execution via tags, handlers, or javascript: payloads.",
+      "count": 2
+    },
+    {
+      "attack_type": "path_traversal",
+      "label": "Path Traversal / LFI",
+      "description": "Directory traversal and local file access attempts such as ../ or /etc/passwd payloads.",
+      "count": 2
+    },
+    {
+      "attack_type": "command_injection",
+      "label": "Command Injection / RCE",
+      "description": "Shell chaining and operating-system command execution attempts against the application stack.",
+      "count": 2
+    },
+    {
+      "attack_type": "brute_force",
+      "label": "Brute Force / Login Abuse",
+      "description": "Repeated authentication attempts, password spraying, or credential stuffing behavior.",
+      "count": 1
+    }
+  ],
+  "simulation_ips": [
+    "198.51.85.10",
+    "198.51.85.11",
+    "198.51.85.12",
+    "198.51.85.13",
+    "198.51.85.14",
+    "198.51.85.15",
+    "198.51.85.16",
+    "198.51.85.17",
+    "198.51.85.18",
+    "198.51.85.19",
+    "198.51.85.20"
+  ],
+  "summary": {
+    "blocked": 38,
+    "monitored": 13,
+    "allowed": 0,
+    "families_exercised": 10,
+    "attack_families_exercised": 10,
+    "supported_attack_families": 10,
+    "attack_requests": 43,
+    "control_requests": 8,
+    "control_allowed": 0,
+    "control_monitored": 4,
+    "control_blocked": 4
+  },
+  "started_at": "2026-04-02T13:36:35+00:00"
+}

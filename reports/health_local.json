@@ -1,0 +1,2 @@
+{"app":"AI-Based WAF","auth_enabled":true,"backend_base_url":"http://127.0.0.1:5001","dashboard_ui_ready":true,"database":"C:\\Users\\tamat\\OneDrive\\Desktop\\wafai\\waf_project\\data\\waf.sqlite3","database_backend":"sqlite","frontend_dev_server":false,"frontend_embedded":true,"rate_limit_backend":"storage","status":"ok"}
+

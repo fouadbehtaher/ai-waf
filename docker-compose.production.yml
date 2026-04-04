@@ -1,0 +1,75 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: waf-postgres
+    environment:
+      POSTGRES_DB: waf_project
+      POSTGRES_USER: waf_user
+      POSTGRES_PASSWORD: waf_password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U waf_user -d waf_project"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: waf-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+
+  sample-backend:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.sample_backend
+    container_name: waf-sample-backend
+    environment:
+      SAMPLE_BACKEND_HOST: 0.0.0.0
+      SAMPLE_BACKEND_PORT: 5001
+
+  waf-api:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.api
+    container_name: waf-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      sample-backend:
+        condition: service_started
+    environment:
+      WAF_HOST: 0.0.0.0
+      WAF_DATABASE_URL: postgresql://waf_user:waf_password@postgres:5432/waf_project
+      WAF_REDIS_URL: redis://redis:6379/0
+      WAF_RATE_LIMIT_BACKEND: redis
+      WAF_BACKEND_URL: http://sample-backend:5001
+      WAF_FRONTEND_PUBLIC_URL: http://localhost:${WAF_FRONTEND_PORT:-8080}
+      WAF_CORS_ALLOWED_ORIGINS: http://localhost:${WAF_FRONTEND_PORT:-8080},http://127.0.0.1:${WAF_FRONTEND_PORT:-8080}
+      WAF_SECRET_KEY: change-me-before-production
+      WAF_ADMIN_PASSWORD: ChangeMeAdmin123!
+      WAF_ANALYST_PASSWORD: ChangeMeAnalyst123!
+      WAF_VIEWER_PASSWORD: ChangeMeViewer123!
+    expose:
+      - "5000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.frontend
+      args:
+        VITE_API_BASE_URL: /api
+    container_name: waf-frontend
+    depends_on:
+      waf-api:
+        condition: service_started
+    ports:
+      - "${WAF_FRONTEND_PORT:-8080}:80"
+
+volumes:
+  postgres_data:
+  redis_data:

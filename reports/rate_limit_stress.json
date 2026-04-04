@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:8081/inspect?message=stress-check",
+  "requests": 80,
+  "concurrency": 16,
+  "elapsed_seconds": 3.4071,
+  "status_counts": {
+    "200": 43,
+    "403": 37
+  }
+}

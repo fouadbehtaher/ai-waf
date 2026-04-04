@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AI-Based WAF Summary Report</title>
+    <style>
+        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; margin: 32px; color: #13293d; }
+        h1, h2 { margin-bottom: 10px; }
+        pre { background: #f6efe3; border-radius: 14px; padding: 16px; white-space: pre-wrap; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #e4d8c7; padding: 10px; text-align: left; }
+        th { background: #faf1e5; }
+    </style>
+</head>
+<body>
+    <h1>AI-Based WAF Summary Report</h1>
+    <p>Generated at 2026-04-02T01:39:47+00:00 for the last 86400 seconds.</p>
+
+    <h2>Executive Summary</h2>
+    <pre>Total requests: 82
+Allowed: 35
+Monitored: 34
+Blocked: 13
+Average latency: 181.151 ms
+Average risk score: 0.4134
+Top attack types: anomaly (32), blacklist (8), suspicious_payload (8), manual_policy (2), repeat_offender (2)
+Top sources: 127.0.0.1 (13 blocked)
+Blacklist size: 0
+Active model: iforest-live-check</pre>
+
+    <h2>Top Attack Types</h2>
+    <table>
+        <tr><th>Attack type</th><th>Count</th></tr>
+        
+        <tr><td>anomaly</td><td>32</td></tr>
+        
+        <tr><td>blacklist</td><td>8</td></tr>
+        
+        <tr><td>suspicious_payload</td><td>8</td></tr>
+        
+        <tr><td>manual_policy</td><td>2</td></tr>
+        
+        <tr><td>repeat_offender</td><td>2</td></tr>
+        
+    </table>
+
+    <h2>Blacklist</h2>
+    <table>
+        <tr><th>IP</th><th>Reason</th><th>Source</th><th>Expires at</th></tr>
+        
+            <tr><td colspan="4">No blacklisted IPs.</td></tr>
+        
+    </table>
+</body>
+</html>

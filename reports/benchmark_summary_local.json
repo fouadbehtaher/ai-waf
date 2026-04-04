@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:5000/proxy/api/hello?name=local-bench",
+  "requests": 20,
+  "concurrency": 4,
+  "avg_latency_ms": 244.4988,
+  "p50_latency_ms": 234.7051,
+  "p95_latency_ms": 365.3692,
+  "throughput_rps": 15.2872
+}

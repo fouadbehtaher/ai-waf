@@ -1,0 +1,2 @@
+{"app":"AI-Based WAF","auth_enabled":true,"backend_base_url":"http://sample-backend:5001","dashboard_ui_ready":false,"database":"postgresql://waf_user:waf_password@postgres:5432/waf_project","database_backend":"postgresql","frontend_dev_server":false,"frontend_embedded":false,"rate_limit_backend":"redis","status":"ok"}
+

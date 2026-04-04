@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:5000/inspect?message=hello",
+  "requests": 20,
+  "concurrency": 4,
+  "avg_latency_ms": 461.216,
+  "p50_latency_ms": 458.5142,
+  "p95_latency_ms": 560.47,
+  "throughput_rps": 8.1188
+}

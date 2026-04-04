@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:8081/inspect?message=hello",
+  "requests": 20,
+  "concurrency": 4,
+  "avg_latency_ms": 203.443,
+  "p50_latency_ms": 201.37,
+  "p95_latency_ms": 259.0585,
+  "throughput_rps": 18.8236
+}

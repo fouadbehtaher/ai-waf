@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AI-Based WAF Summary Report</title>
+    <style>
+        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; margin: 32px; color: #13293d; }
+        h1, h2 { margin-bottom: 10px; }
+        pre { background: #f6efe3; border-radius: 14px; padding: 16px; white-space: pre-wrap; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #e4d8c7; padding: 10px; text-align: left; }
+        th { background: #faf1e5; }
+    </style>
+</head>
+<body>
+    <h1>AI-Based WAF Summary Report</h1>
+    <p>Generated at 2026-04-02T01:39:46+00:00 for the last 86400 seconds.</p>
+
+    <h2>Executive Summary</h2>
+    <pre>Total requests: 184
+Allowed: 131
+Monitored: 0
+Blocked: 53
+Average latency: 185.167 ms
+Average risk score: 0.3735
+Top attack types: rate_limit (49), blacklist (37), suspicious_payload (1)
+Top sources: 172.18.0.6 (53 blocked)
+Blacklist size: 1
+Active model: heuristic fallback</pre>
+
+    <h2>Top Attack Types</h2>
+    <table>
+        <tr><th>Attack type</th><th>Count</th></tr>
+        
+        <tr><td>rate_limit</td><td>49</td></tr>
+        
+        <tr><td>blacklist</td><td>37</td></tr>
+        
+        <tr><td>suspicious_payload</td><td>1</td></tr>
+        
+    </table>
+
+    <h2>Blacklist</h2>
+    <table>
+        <tr><th>IP</th><th>Reason</th><th>Source</th><th>Expires at</th></tr>
+        
+            
+            <tr><td>172.18.0.6</td><td>Adaptive blacklist after repeated blocked requests</td><td>adaptive</td><td>2026-04-02T01:48:42+00:00</td></tr>
+            
+        
+    </table>
+</body>
+</html>

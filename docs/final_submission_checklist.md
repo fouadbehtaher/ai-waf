@@ -1,0 +1,22 @@
+# Final Submission Checklist
+
+- Source code cleaned and runnable.
+- `README.md` updated with run instructions.
+- `docs/academic_framework.md` included.
+- `docs/literature_review.md` included.
+- `docs/system_architecture.md` included.
+- `docs/final_report.md` included.
+- `docs/chapters/` includes Chapter 1-5 plus appendices.
+- `docs/presentation_deck.md` included.
+- `docs/references.md` included.
+- `scripts/generate_academic_results.py` included.
+- benchmark output attached from `reports/benchmark_summary.json`.
+- benchmark output attached from `reports/benchmark_summary_local.json`.
+- inspection benchmarks attached from `reports/benchmark_inspect_local.json` and `reports/benchmark_inspect_docker.json`.
+- labeled dataset export attached if allowed by project policy.
+- test output captured from `python -m unittest discover -s tests -v`.
+- evaluation output captured from `reports/model_evaluation.json`.
+- consolidated academic results captured from `reports/academic_results.json` and `reports/academic_results.md`.
+- rate-limit stress evidence captured from `reports/rate_limit_stress.json`.
+- deployment evidence captured for SQLite local mode.
+- PostgreSQL and Redis deployment steps attached for production mode.

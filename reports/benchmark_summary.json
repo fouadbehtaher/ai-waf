@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:8081/proxy/api/hello?name=bench-clean",
+  "requests": 20,
+  "concurrency": 4,
+  "avg_latency_ms": 168.9584,
+  "p50_latency_ms": 159.6205,
+  "p95_latency_ms": 206.9271,
+  "throughput_rps": 22.8297
+}
