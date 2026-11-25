@@ -11,6 +11,12 @@ This project implements a hybrid web application firewall that combines:
 - reporting and dataset export
 - reverse proxy forwarding to a backend service
 
+## Request flow
+
+How `handle_security_pipeline()` in `main.py` decides one request. The diagram shows the order of steps, not detection accuracy.
+
+![ai-waf request flow](docs/images/aiwaf-request-flow.png)
+
 ## Project layout
 
 ```text
