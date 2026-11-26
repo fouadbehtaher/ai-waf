@@ -1,0 +1,14 @@
+# Python bytecode and caches
+__pycache__/
+*.pyc
+# Runtime state, logs and local databases (generated when the app runs)
+*.pid
+*.log
+*.stdout.log
+*.stderr.log
+data/*.sqlite3
+data/*.sqlite3-*
+# Local environment
+.env
+.env.local
+node_modules/
