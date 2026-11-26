@@ -362,6 +362,10 @@ python scripts/benchmark_proxy.py --url http://127.0.0.1:5000/proxy/api/hello --
 python -m unittest discover -s tests -v
 ```
 
+## Provenance of `core/`
+
+`core/` was incomplete in earlier uploads of this repository. These 16 modules were restored in a later commit by copying them unchanged from the companion repository `fouadbehtaher/ai-based-waf-project` (`core/`): `__init__.py`, `dynamic_thresholds.py`, `endpoint_policy.py`, `feature_engineering.py`, `feedback_loop.py`, `mitigation.py`, `ml_log_training.py`, `ml_models.py`, `pattern_validation.py`, `pre_app_filter.py`, `proxy_transport.py`, `rate_limiter.py`, `rule_engine.py`, `simulation_suite.py`, `storage.py` and `transport_awareness.py`. They are restored code, not a new contribution. The other `core/` files in both repositories are byte-identical. `pytest.ini` was added so `pytest` runs `tests/` only.
+
 ## Academic package
 
 The following files raise the project from a prototype to a research-ready package:
