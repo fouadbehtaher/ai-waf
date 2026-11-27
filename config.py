@@ -1,4 +1,6 @@
+import logging
 import os
+import secrets
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Dict, Tuple
@@ -19,6 +21,20 @@ def _bool_env(name: str, default: bool) -> bool:
     if raw is None:
         return default
     return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _secret_env(name: str) -> str:
+    """Read a password from the environment; generate a random one if unset."""
+    raw = os.getenv(name)
+    if raw and raw.strip():
+        return raw.strip()
+    generated = secrets.token_urlsafe(18)
+    logging.getLogger(__name__).warning(
+        "%s is not set; generated a random password for this run. "
+        "Set %s in the environment to choose a persistent password.",
+        name, name,
+    )
+    return generated
 
 
 def _int_env(name: str, default: int) -> int:
@@ -263,11 +279,11 @@ class Settings:
     bot_browser_integrity_gap_threshold: int = 2
     bot_scraping_request_threshold: int = 6
     admin_username: str = "admin"
-    admin_password: str = "Admin123!"
+    admin_password: str = ""
     analyst_username: str = "analyst"
-    analyst_password: str = "Analyst123!"
+    analyst_password: str = ""
     viewer_username: str = "viewer"
-    viewer_password: str = "Viewer123!"
+    viewer_password: str = ""
     model_bias: float = 0.05
     model_weights: Dict[str, float] = field(
         default_factory=lambda: {
@@ -466,11 +482,11 @@ def load_settings() -> Settings:
         ml_log_training_cooldown_seconds=_int_env("WAF_ML_LOG_TRAINING_COOLDOWN_SECONDS", 86400),
         ml_log_training_algorithm=os.getenv("WAF_ML_LOG_TRAINING_ALGORITHM", "random_forest"),
         admin_username=os.getenv("WAF_ADMIN_USERNAME", "admin"),
-        admin_password=os.getenv("WAF_ADMIN_PASSWORD", "Admin123!"),
+        admin_password=_secret_env("WAF_ADMIN_PASSWORD"),
         analyst_username=os.getenv("WAF_ANALYST_USERNAME", "analyst"),
-        analyst_password=os.getenv("WAF_ANALYST_PASSWORD", "Analyst123!"),
+        analyst_password=_secret_env("WAF_ANALYST_PASSWORD"),
         viewer_username=os.getenv("WAF_VIEWER_USERNAME", "viewer"),
-        viewer_password=os.getenv("WAF_VIEWER_PASSWORD", "Viewer123!"),
+        viewer_password=_secret_env("WAF_VIEWER_PASSWORD"),
     )
 
 

@@ -158,11 +158,13 @@ If you build the SPA separately, point `VITE_API_BASE_URL` to the Flask backend.
 
 ## Admin login
 
-The React dashboard now requires authentication. Seeded demo accounts are created automatically on a fresh database:
+The React dashboard now requires authentication. Seeded accounts are created automatically on a fresh database. Passwords come from environment variables; there are no hard-coded defaults:
 
-- `admin / Admin123!`
-- `analyst / Analyst123!`
-- `viewer / Viewer123!`
+- `admin` / value of `WAF_ADMIN_PASSWORD`
+- `analyst` / value of `WAF_ANALYST_PASSWORD`
+- `viewer` / value of `WAF_VIEWER_PASSWORD`
+
+If a password variable is not set, a random password is generated at startup and printed in the server logs. Set the variables in your `.env` file or environment to choose persistent passwords.
 
 Role behavior:
 
@@ -278,7 +280,7 @@ Open:
 Authenticate first:
 
 ```powershell
-curl -X POST "http://127.0.0.1:5000/api/auth/login" -H "Content-Type: application/json" -d "{\"username\":\"admin\",\"password\":\"Admin123!\"}"
+curl -X POST "http://127.0.0.1:5000/api/auth/login" -H "Content-Type: application/json" -d "{\"username\":\"admin\",\"password\":\"$WAF_ADMIN_PASSWORD\"}"
 ```
 
 Add an IP to the blacklist:

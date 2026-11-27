@@ -925,7 +925,7 @@ export default function App() {
   const [session, setSession] = useState(() => readStoredSession());
   const [authLoading, setAuthLoading] = useState(true);
   const [authBusy, setAuthBusy] = useState(false);
-  const [loginForm, setLoginForm] = useState({ username: "admin", password: "Admin123!" });
+  const [loginForm, setLoginForm] = useState({ username: "", password: "" });
   const [windowSeconds, setWindowSeconds] = useState(86400);
   const [summary, setSummary] = useState(emptySummary);
   const [notificationsFeed, setNotificationsFeed] = useState([]);

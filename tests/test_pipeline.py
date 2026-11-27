@@ -1,4 +1,5 @@
 import json
+import os
 import tempfile
 import threading
 import time
@@ -14,6 +15,10 @@ from core.attack_taxonomy import ATTACK_FAMILIES
 from core import dynamic_thresholds as dt
 from core import endpoint_policy as ep
 from core import mitigation as mi
+os.environ.setdefault("WAF_ADMIN_PASSWORD", "Admin123!")
+os.environ.setdefault("WAF_ANALYST_PASSWORD", "Analyst123!")
+os.environ.setdefault("WAF_VIEWER_PASSWORD", "Viewer123!")
+
 from config import settings
 from main import create_api_app, create_app
 
